@@ -1,0 +1,16 @@
+/* Your customization rules (that override Bootstrap's) go here */
+
+
+
+
+
+
+
+/* for clearer appearance in the grid demo. Do not modify */
+.grid-demo div div {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgba(86,61,124,.15);
+    border: 1px solid rgba(86,61,124,.2);
+    text-align: center;
+}

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+
+	<!-- tells old IE to render the page similar to Edge if it can -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<!-- tells mobile devices not to zoom the page; we'll handle appearance changes ourselves! -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Bootstrap Tour</title>
+
+	<link rel="stylesheet" href="css/my-style.css">
+</head>
+
+<body>
+
+	<header>
+		<h1>Bootstrap: a Tour</h1>
+	</header>
+
+	<article>
+		<section id="preamble">
+			<p>This lab tutorial is designed to give you a quick overview of the <a href="http://getbootstrap.com/" target="_blank">Bootstrap CSS framework</a>. Although you've been introduced to this framework before, this lab will re-inforce how you might use Bootstrap <em>in practice</em>	(e.g., on future assignments).</p>
+
+			<p>Note that this is just a quick tour of the basics of using Bootstrap. As always, for further details and practice you should see the <a href="http://getbootstrap.com/css/" target="_blank">documentation</a>, including the <a href="http://getbootstrap.com/getting-started/#examples">examples</a>.</p>
+
+			<p>As part of this tour, you will need to modify the HTML of the webpage you are currently looking at in order to see how to use the framework!</p>
+		</section>
+
+		<section id="intro">
+			<h2>What is Bootstrap?</h2>
+
+			<blockquote cite="http://getbootstrap.com/">Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.</blockquote>
+
+			<p>For us, Bootstrap (also "Twitter Bootstrap", since it was originally developed at Twitter) is a set of <strong>pre-defined CSS rules</strong>				that you can include and use in your web page. You can think of it like "starter code": a set of basic styling rules	that you can use to get your page looking decent, before you add in your own CSS customizations. It means you don't have to start your styling from scratch--it can "bootstrap" your work!</p>
+
+			<p>To prove that this is not magic, you can look directly at the CSS rules:</p>
+			<pre><a href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css</a></pre>
+			<p>You'll see the same kinds of CSS (including media queries) that we've been learning! There's just a lot of it provided for you.</p>
+
+			<h2>Including Bootstrap</h2>
+
+			<p>You include Bootstrap just like any other CSS file, by adding a <code>&lt;link&gt;</code> element to your header:</p>
+			<pre><code>&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"&gt;</code></pre>
+
+			<p>Note that you usually link to the <em>minified</em> version of the file.</p>
+
+			<p>Add this line to the <code>&lt;head&gt;</code> of the page now. Be sure and add it <strong>before</strong> your own stylesheet so that any rules you define will "override" Bootstrap's (being loaded second).</p>
+
+			<p>Reloading the page, you should see the instant effect Bootstrap has: your page now has a nicer font, well-sized <a href="http://getbootstrap.com/css/#type-headings">headings</a>,	highlighted <code>&lt;code&gt;</code> tags, and so-forth. See <a href="http://getbootstrap.com/css/#type">Typography</a>	for more examples and details for how Bootstrap styles basic HTML.</p>
+		</section>
+
+		<section id="classes">
+			<h2>Provided Classes</h2>
+
+			<p>Beyond the default styling Bootstrap will apply to your HTML, it's most powerful functionality is in a set of <em>class definitions</em> for which the framework provides styling. You can add these classes to your HTML elements in order to quickly alter their appearance in a standardized way</p>
+
+			<p class="alert alert-info">Class names are not magical, they are just the name the Bootstrap developers happened to associate their selectors with	in order to apply certain styling rules.</p>
+
+			<p>For example, the above "blue info box" is an example of an <a href="http://getbootstrap.com/components/#alerts">alert</a>	that changes color for elements that match the <code>.alert.alert-info</code> selector. Bootstrap provides a number of these different <a href="http://getbootstrap.com/css/#helper-classes-backgrounds">contextual classes</a> you can use.</p>
+
+			<p><strong>For practice</strong>:</p>
+			<ol>
+				<li>Add the <code>bg-primary</code> class to the <code>&lt;header&gt;</code> at the top of the page. You should see that	element take on the "default" color.</li>
+				<li>Add the <code>page-header</code> class as well to improve the spacing.</li>
+				<li>And to really fix the spacing, make the header a <a href="http://getbootstrap.com/components/#jumbotron">jumbotron</a> <em>instead of</em> having <code>bg-primary</code>. This will of course remove the "blue" background.</li>
+				<li><em>Extra Challenge</em>: If you wanted the header to be white-on-blue, you'd need to modify your own custom CSS. Try	declaring a rule that gives <code>.jumbotron</code> elements the same <code>color</code> and <code>background-color</code>	as <code>.bg-primary</code> elements. You can use the Developer Tools to see what rules that class normally specifies</code>.</li>
+			</ol>
+
+			<p>These classes may often seem redundant with element names, but this is used to specify that you want a <em>Bootstrap-styled element</em>				rather than a more basic styling. For example, try adding the class <code>btn</code> to the below button:</p>
+
+      <p><button>Click me!</button></p>
+
+      <p>(And of course, there are more <a href="http://getbootstrap.com/css/#buttons">options</a> you can use as well. Try making the button large and green. What happens if you make the button <code>disabled</code> (via an attribute)?</p>
+
+      <p>Class names can often apply to a variety of elements. For example, you can use the same <code>btn</code> and <code>btn-primary</code> classes to make a normal hyperlink look like a button:</p>
+
+			<p><a href="http://getbootstrap.com/css/#anchor-element">I'm a button, believe you me!</a></p>
+		</section>
+
+		<section id="containers">
+			<h2>Containers</h2>
+
+			<p>One of the most common classes to include in a Bootstrap-styled document is the <a href="http://getbootstrap.com/css/#overview-container"><code>.container</code></a>	class. This class makes the specified element have a <strong>fixed-width</strong> on the screen within a certain range	of screen widths&mdash;so minor changes to your browser's width won't change the width of the container (e.g., it won't	change how many words across each line is). This is exactly what the <code>.container</code> class you used in your Pencil challenge did.</p>
+
+			<p><strong>Practice</strong> by adding the <code>container</code> class to the <code>&lt;body&gt;</code> of your page so	the entire document is added to a fixed-width container. Then try resizing the browser, and notice how the width of the <em>content</em> only changes at a few major "jumps" (between "extra-small", "small", "medium" and "large" widths&mdash;these	are breakpoints Bootstrap uses for responsive styling).</p>
+
+			<p>Note that <em>any</em> content and elements inside the <code>container</code> will exist within the fixed-width area, and so will have the padding along the sides. So because your header is inside the container, the blue jumbotron background doesn't fill the page!</p>
+
+			<p>To fix this, you'll need to put <em>contents</em> of the jumbotron inside a <code>container</code>, while leaving the jumbotron itself outside. To do this, try creating a new <code>&lt;div&gt;</code> that is <em>inside</em> the header,but itself contains the content (the <code>&lt;h1&gt;</code> tag). Make this <code>div</code> the <code>container</code>, while the header itself remains styled as a jumbotron! (You'll want to also put the main <code>article</code> content	inside a <code>container</code> as well, so the page remains readable).</p>
+
+			<p class="alert alert-info">This is the same thing you were asked to do for your homework assignment. It is a very common pattern: have an "outer"	element that has the outside, full-page styling, but then an inner element (like a <code>div</code>) that contains extra	styling that applies to the content.</p>
+		</section>
+
+		<section id="helper-classes">
+			<h2>Helper Classes</h2>
+
+			<p>Bootstrap contains a number of <a href="http://getbootstrap.com/css/#helper-classes">helper classes</a> that can be used for common styling tasks... the kinds of things you did on your Pencil assignment!</p>
+
+			<p>For example, look at how you can add <a href="http://getbootstrap.com/css/#type-lists">a single class</a> to make the below list inline:</p>
+
+			<div class="well"> <!-- the "well" class puts this in a box -->				
+				<ul>
+					<li>Lions!</li>
+					<li>Tigers!</li>
+					<li>Bears!</li>
+					<li>Oh my!</li>
+				</ul>
+			</div>
+
+			<p>Bootstrap also makes it <a href="http://getbootstrap.com/css/#helper-classes-floats">easy</a> to "float" elements to one	side. For example, add a class to make the last item in the above list float off to the right side of the page.</p>
+
+			<p>It's also possible to <a href="http://getbootstrap.com/css/#type-alignment">center text</a> (try it below.</p>
+
+			<div class="well">
+				<p>I'm stuck in the middle!</p>
+			</div>
+
+			<p>And of course, you can easily use Bootstrap to make content <a href="http://getbootstrap.com/css/#helper-classes-show-hide">disappear</a>. Can you hide the above paragraph's well?</p>
+		</section>
+
+		<section id="forms">
+			<h2>Bootstrap Forms</h2>
+
+			<p>Some content structures&mdash;like <a href="http://getbootstrap.com/css/#tables">tables</a> or <a href="http://getbootstrap.com/css/#forms">forms</a>	use a number of different classes together. These classes are well documented, though you need to carefully look through	the examples and explanations to figure out how to use them.</p>
+
+			<p><strong>Practice</strong> reading this documentation and interpreting the examples by modifying the below form so that it (basically) matches the screenshot in appearance.</p>
+
+      <div class="well">
+        <form role="form">
+          <label for="nameInput">What is your name?</label>
+          <input type="text" id="nameInput">
+
+          <label for="questInput">What is your quest?</label>
+          <input type="text" id="questInput">
+
+          <label for="colorInput">What is your favorite color?</label>
+          <input type="text" id="colorInput" aria-describedby="formNote">          
+          <span id="formNote">(Don't screw this up!)</span>
+        </form>
+      </div>
+
+      <figure>
+        <img class="img-responsive" src="img/form-screenshot.png" alt="what the form should look like">
+        <figcaption>What the form should look like. Notice the spacing, the style of the inputs, and the coloring of the text. You only need to use Bootstrap classes (and some <code>divs</code>) for this.</figcaption>
+      </figure>
+		</section>
+
+    <section id="responsive">
+      <h2>Responsive Utilities</h2>
+
+      <p>Of course, the most significant feature of Bootstrap is how its classes are able to support <strong>mobile-first, responsive deisgn</strong> and adjust to the size of the screen. This allows pages styled with Bootstrap to function well on mobile phones, tablets, laptops, and desktops.</p>
+
+      <p>Bootstrap's rules generally divide devices into 4 different size categories:</p>
+
+      <ul>
+        <li><strong>Extra small</strong> (<code>xs</code>), or any device less than <code>768px</code> across. Think "mobile phones".</li>
+        <li><strong>Small</strong> (<code>sm</code>), or devices greater than <code>768px</code> across. Think "tablets".</li>
+        <li><strong>Medium</strong> (<code>md</code>), or devices greater than <code>992px</code> across. Think "laptops".</li>
+        <li><strong>Large</strong> (<code>lg</code>), or devices greater than <code>1200px</code> across. Think "desktops".</li>
+      </ul>
+
+      <p>You can see these sizes at play when the <code>container</code>'s fixed-width increases.</p>
+
+      <p class="alert alert-info">Under the hood of course, Bootstrap is just using a bunch of <code>@media</code> queries!</p>
+
+      <p>The two letter abbreviations (<code>xs, sm, md, lg</code>) are used by class names to refer to <em>behavior that should apply on that size device</em>. These are used by a number of <a href="http://getbootstrap.com/css/#responsive-utilities">responsive utility classes</a>. For example, the <code>hidden-xs</code> class indicates that an element should not be shown on an extra-small (&lt;768px) screen.</p>
+
+      <p class="well"><strong>For practice</strong>, trying making a single paragraph (such as this one!) disappear on <em>medium</em> sized devices. Resize the browser to see that it works. Peek-a-boo!</p>
+    </section>
+
+    <section id="grids">
+      <h2>Grids</h2>
+
+      <p>If responsive classes are the most useful part of Bootstrap, the most useful responsive classes are those that support the <a href="http://getbootstrap.com/css/#grid"><strong>Grid System</strong></a>. This system is a set of classes that can be applied in order to arrange content into columns, where the number of columns shown changes on different screen sizes. This is equivalent to what you did with <code>flexbox</code>; the rules and media-queries are just provided for you!</p>
+
+      <p class="alert alert-info">While Bootstrap 3 (the current version) uses floats and width properties to function, the upcoming <a href="https://v4-alpha.getbootstrap.com/">Bootstrap 4</a> will actually use flexbox underneath the hood!</p>
+
+      <p>Although we've already been over the grid system, we'll review the basics here for you. You should also look at the examples/description in the <a href="https://faculty.washington.edu/dlsinfo/tutorials/css-frameworks/#sec-responsivelayoutgrids">CSS Frameworks Tutorial</a>, as well as in the <a href="http://getbootstrap.com/css/#grid">Bootstrap documentation</a>.</p>
+
+      <p>The basic structure of the grid is like a giant <strong>table</strong>; elements are arranged into <em>rows</em> (similar to <code>&lt;tr&gt;</code>), each of which includes a number of <em>columns</em> (similar to <code>&lt;td&gt;</code>). You indicate that elements exist within a single row by putting them inside an element (like a div) with the class <code>row</code>:</p>
+
+      <p><img src="img/grid-rows.png" class="img-responsive" alt="example row code"></p>
+
+      <p>By default, each "row" has <strong>12 columns</strong> of equal width&mdash;you can think of it lke having 12 cells in an Excel spreadsheet. You use Bootstrap classes to then specify how many "columns/cells" you want each of your elements to take up&mdash;like "merging" columns in a spreadsheet.</p>
+
+      <p><img src="img/grid-cells.png" class="img-responsive" alt="example column spanning"></p>
+
+      <p>Elements can take up as many (whole) columns as you want, and need not add up to the total 12. If your elements take up a total of <em>more</em> than 12 columns, they'll actually "wrap" around to the next line just like a sentence that gets to long for a paper... though they are still part of the same "row".</p>
+
+      <p>You specify how many cells the element should take up by giving it a class of the format <strong><code>col-xs-*</code></strong>, where the <code>*</code> is the number of cells you want it to cover. For example, <code>col-xs-1</code> takes up 1 cell, <code>col-xs-3</code> takes up 3 cells, and so on.</p>
+
+      <p><strong>Practice:</strong> in the well below, add Bootstrap classes so that the 5 letters are organized into two rows as indicated. The first row should be divided equally into 3 columns, and the second row should have columns of different widths (your choice!).</p>
+
+      <div class="well">
+        <div class="grid-demo">
+          <div> <!--this is a row -->
+            <div>A</div>
+            <div>B</div>
+            <div>C</div>
+          </div>
+          <div> <!--this is a row -->
+            <div>D</div>
+            <div>E</div>
+          </div>
+        </div> <!-- end demo -->
+      </div> <!-- end well -->
+
+      <p>But where's the responsiveness? The key here is that <strong><code>.col-xs-4</code></strong> indicates that the element should span 4 cells <em>on extra-small screens or larger</em>. You can change that middle part (the <code>xs</code>) to use any of the other size classes (<code>sm, md, lg</code>), and the class will then specify how many cells it should span on that size <strong>or larger</strong>. If a size isn't specified for a particular screen width, the element defaults to taking up all 12 cells.</p>
+      
+      <p class="alert alert-info">The "or larger" part following from a mobile-first philosophy&mdash;you specify what it looks like on smaller screens, and then expect it to work the same way on larger screens unless you indicate otherwise</p>
+
+      <p><strong>Practice:</strong> modify your above grid so that the first row has 3 equal-sized columns <em>on medium or larger devices</em>, and that the second row has different column widths <em>on large or larger devices</em>.</p>
+      
+      <p>The last trick is that we can use <em>multiple column classes</em> to indicate how cell spanning should change as the screen size changes. For example, if an element has the class:</p>
+
+      <pre><code>&lt;div class="col-sm-4 col-md-3"&gt;</code></pre>
+
+      <p>That indicates that on <em>small or larger</em> devices it should take up 4 cells, but on <em>medium or larger</em> devices it should only take up 3 cells. Note that the <code>col-md-3</code> will override the previous specification. For sizes that are unspecified (e.g., <code>xs</code>) the element will default to taking up all 12 cells.</p>
+
+      <p>This allows you to specify a "default" size on a smaller device (e.g., <code>xs</code> or <code>sm</code>), as well what the size should change to as things get larger. Just like with our mobile-first media queries!</p>
+      
+      <p class="alert alert-warning">Note that in the above example, you would <strong>not</strong> have to include the <code>col-lg-4</code> class. Because large devices fall under "medium-sized or larger", declaring the size on <code>md</code> devices is sufficient. Only add classes and styles for things that are going to <em>change</em> as the screen gets larger!</p>
+
+      <p><strong>Practice:</strong> modify the above grid yet again so that in the first row:</p>
+
+      <ol>
+        <li>On extra-small screens, each content element takes up the entire screen width (all 12 cells).</li>
+        <li>On small or larger screens, each content element takes <em>half</em> the screen. Note that because there are three items and each takes half the screen, one item will end up "below" the others&mdash;make sure this item fills the entire screen width.</li>
+        <li>On medium or larger screens, each content element takes up equal space, as previously.</li>
+      </ol>
+
+      <p>Also make the second row change it's sizing on smaller screens, in a manner of your choosing!</p>
+
+      <p>And that's the basic idea behind the grid. These responsive sizing classes (e.g., <code>col-sm-3</code>) are used all over Bootstrap, such as for making horizontal forms or specifying table column sizes. The key is to think about "how many of the 12 cells do you want to span", and then specifying that number for any screen size where it changes.</p>
+    </section>
+
+    <section id="conclusion">
+      <h2>Conclusion</h2>
+      <p>This tour gives you a taste of some of the main components of Bootstrap. There are many other styling classes and options you can use, as well as built-in <a href="http://getbootstrap.com/components/">components</a> (widgets) and even interactive elements using JavaScript, which we will look at in the future.</p>
+
+      <p>To learn more, read through the documentation or search for "how to do ______ in Bootstrap".</p>
+    </section>
+	</article>
+</body>
+
+</html>
