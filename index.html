@@ -10,17 +10,20 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>Bootstrap Tour</title>
-
-	<link rel="stylesheet" href="css/my-style.css">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <link rel="stylesheet" href="css/my-style.css">
+ 
 </head>
 
 <body>
 
-	<header>
+	<header class = "jumbotron">
+    <div class="container">
 		<h1>Bootstrap: a Tour</h1>
+    </div>
 	</header>
 
-	<article>
+	<article class="container">
 		<section id="preamble">
 			<p>This lab tutorial is designed to give you a quick overview of the <a href="http://getbootstrap.com/" target="_blank">Bootstrap CSS framework</a>. Although you've been introduced to this framework before, this lab will re-inforce how you might use Bootstrap <em>in practice</em>	(e.g., on future assignments).</p>
 
@@ -71,7 +74,7 @@
 
 			<p>These classes may often seem redundant with element names, but this is used to specify that you want a <em>Bootstrap-styled element</em> rather than a more basic styling. For example, try adding the class <code>btn</code> to the below button:</p>
 
-      <p><button>Click me!</button></p>
+      <p><button class = "btn btn-lg btn-success" disabled="disabled">Click me!</button></p>
 
       <p>(And of course, there are more <a href="http://getbootstrap.com/css/#buttons">options</a> you can use as well. Try making the button large and green. What happens if you make the button <code>disabled</code> (via an attribute)?</p>
 
@@ -106,7 +109,7 @@
 					<li>Lions!</li>
 					<li>Tigers!</li>
 					<li>Bears!</li>
-					<li>Oh my!</li>
+					<li class="pull-right">Oh my!</li>
 				</ul>
 			</div>
 
@@ -114,7 +117,7 @@
 
 			<p>It's also possible to <a href="http://getbootstrap.com/css/#type-alignment">center text</a> (try it below.</p>
 
-			<div class="well">
+			<div class="well text-center hidden"> <!--make text centered and hide it -->
 				<p>I'm stuck in the middle!</p>
 			</div>
 
