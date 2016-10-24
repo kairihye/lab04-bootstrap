@@ -11,16 +11,20 @@
 
 	<title>Bootstrap Tour</title>
 
+  <!-- load bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/my-style.css">
 </head>
 
 <body>
 
-	<header>
-		<h1>Bootstrap: a Tour</h1>
+	<header class="jumbotron">
+    <div class="container">
+  		<h1>Bootstrap: a Tour</h1>
+    </div>
 	</header>
 
-	<article>
+	<article class="container">
 		<section id="preamble">
 			<p>This lab tutorial is designed to give you a quick overview of the <a href="http://getbootstrap.com/" target="_blank">Bootstrap CSS framework</a>. Although you've been introduced to this framework before, this lab will re-inforce how you might use Bootstrap <em>in practice</em>	(e.g., on future assignments).</p>
 
@@ -69,15 +73,15 @@
 				<li><em>Extra Challenge</em>: If you wanted the header to be white-on-blue, you'd need to modify your own custom CSS. Try	declaring a rule that gives <code>.jumbotron</code> elements the same <code>color</code> and <code>background-color</code>	as <code>.bg-primary</code> elements. You can use the Developer Tools to see what rules that class normally specifies</code>.</li>
 			</ol>
 
-			<p>These classes may often seem redundant with element names, but this is used to specify that you want a <em>Bootstrap-styled element</em>				rather than a more basic styling. For example, try adding the class <code>btn</code> to the below button:</p>
+			<p>These classes may often seem redundant with element names, but this is used to specify that you want a <em>Bootstrap-styled element</em> rather than a more basic styling. For example, try adding the class <code>btn</code> to the below button:</p>
 
-      <p><button>Click me!</button></p>
+      <p><button class="btn btn-lg btn-success">Click me!</button></p>
 
       <p>(And of course, there are more <a href="http://getbootstrap.com/css/#buttons">options</a> you can use as well. Try making the button large and green. What happens if you make the button <code>disabled</code> (via an attribute)?</p>
 
       <p>Class names can often apply to a variety of elements. For example, you can use the same <code>btn</code> and <code>btn-primary</code> classes to make a normal hyperlink look like a button:</p>
 
-			<p><a href="http://getbootstrap.com/css/#anchor-element">I'm a button, believe you me!</a></p>
+			<p><a class="btn btn-primary" href="http://getbootstrap.com/css/#anchor-element">I'm a button, believe you me!</a></p>
 		</section>
 
 		<section id="containers">
@@ -102,11 +106,11 @@
 			<p>For example, look at how you can add <a href="http://getbootstrap.com/css/#type-lists">a single class</a> to make the below list inline:</p>
 
 			<div class="well"> <!-- the "well" class puts this in a box -->				
-				<ul>
+				<ul class="list-inline">
 					<li>Lions!</li>
 					<li>Tigers!</li>
 					<li>Bears!</li>
-					<li>Oh my!</li>
+					<li class="pull-right">Oh my!</li>
 				</ul>
 			</div>
 
@@ -115,7 +119,7 @@
 			<p>It's also possible to <a href="http://getbootstrap.com/css/#type-alignment">center text</a> (try it below.</p>
 
 			<div class="well">
-				<p>I'm stuck in the middle!</p>
+				<p class="text-center hidden">I'm stuck in the middle!</p>
 			</div>
 
 			<p>And of course, you can easily use Bootstrap to make content <a href="http://getbootstrap.com/css/#helper-classes-show-hide">disappear</a>. Can you hide the above paragraph's well?</p>
@@ -130,15 +134,19 @@
 
       <div class="well">
         <form role="form">
-          <label for="nameInput">What is your name?</label>
-          <input type="text" id="nameInput">
-
-          <label for="questInput">What is your quest?</label>
-          <input type="text" id="questInput">
-
-          <label for="colorInput">What is your favorite color?</label>
-          <input type="text" id="colorInput" aria-describedby="formNote">          
-          <span id="formNote">(Don't screw this up!)</span>
+          <div class="form-group">
+            <label for="nameInput">What is your name?</label>
+            <input type="text" class="form-control" id="nameInput">
+          </div>
+          <div class="form-group">
+            <label for="questInput">What is your quest?</label>
+            <input type="text" class="form-control" id="questInput">
+          </div>
+          <div class="form-group">
+            <label for="colorInput">What is your favorite color?</label>
+            <input type="text" class="form-control" id="colorInput" aria-describedby="formNote">          
+            <span id="formNote" class="help-block">(Don't screw this up!)</span>
+          </div>
         </form>
       </div>
 
@@ -196,14 +204,14 @@
 
       <div class="well">
         <div class="grid-demo">
-          <div> <!--this is a row -->
-            <div>A</div>
-            <div>B</div>
-            <div>C</div>
+          <div class="row"> <!--this is a row -->
+            <div class="col-sm-6 col-md-4">A</div>
+            <div class="col-sm-6 col-md-4">B</div>
+            <div class="col-sm-12 col-md-4">C</div>
           </div>
-          <div> <!--this is a row -->
-            <div>D</div>
-            <div>E</div>
+          <div class="row"> <!--this is a row -->
+            <div class="col-sm-9 col-lg-3">D</div>
+            <div class="col-sm-3 col-lg-9">E</div>
           </div>
         </div> <!-- end demo -->
       </div> <!-- end well -->

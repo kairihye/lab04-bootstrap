@@ -1,9 +1,9 @@
 /* Your customization rules (that override Bootstrap's) go here */
 
-
-
-
-
+.jumbotron {
+  color: #fff;
+  background-color: #337ab7;
+}
 
 
 /* for clearer appearance in the grid demo. Do not modify */
