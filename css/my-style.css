@@ -1,4 +1,9 @@
 /* Your customization rules (that override Bootstrap's) go here */
+.jumbotron{
+    background: deepskyblue;
+    color: white;
+}
+
 
 
 
